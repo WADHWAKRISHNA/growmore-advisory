@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -38,49 +40,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0b0b0b] text-white">
 
-      {/* NAVBAR */}
-      <header className="sticky top-0 z-50 flex justify-between items-center px-10 py-5 bg-[#0b0b0b] border-b border-gray-800">
-        <h1 className="text-2xl font-bold">GROW MORE ADVISORY</h1>
+      <Navbar />
+      <Hero />
 
-        <button className="px-5 py-2 bg-yellow-500 text-black rounded-full font-medium hover:scale-105 transition">
-         Book Consultation
-        </button>
-      </header>
-
-      {/* HERO */}
-      <section className="text-center py-24 px-6">
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-6xl font-bold"
-        >
-          Helping Businesses Grow, Stay Compliant & Scale Confidently
-        </motion.h1>
-
-        <p className="text-gray-400 mt-5">
-          Tax | GST | Income Tax | ROC | Business Advisory
-        </p>
-
-        <p className="text-gray-500 mt-3">
-          Helping startups and businesses scale with compliance, strategy & execution.
-        </p>
-
-        <motion.button
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          className="mt-10 px-8 py-3 bg-yellow-500 text-black rounded-full font-semibold"
-        >
-          Get Consultation
-        </motion.button>
-
-      </section>
-       <div className="flex flex-wrap justify-center gap-6 text-gray-400 mt-6 text-sm">
-        <span>✔ GST Experts</span>
-        <span>✔ Income Tax Filing</span>
-        <span>✔ ROC Compliance</span>
-        <span>✔ Startup Advisory</span>
-      </div>
       {/* SERVICES */}
       <section className="px-10 py-24 border-t border-gray-800">
 
