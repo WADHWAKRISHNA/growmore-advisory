@@ -1,6 +1,6 @@
 "use client";
 
-export default function Navbar() {
+export default function Navbar({ onConsultation }) {
   return (
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/70 border-b border-gray-800">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
