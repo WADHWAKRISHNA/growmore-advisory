@@ -19,7 +19,7 @@ Phone : ${phone}
 
 Service : ${service}
 
-I want to book a free consultation.`;
+I want to book a consultation.`;
 
     window.open(
       `https://wa.me/917452878887?text=${encodeURIComponent(text)}`,
@@ -37,7 +37,7 @@ I want to book a free consultation.`;
         <div className="flex justify-between items-center mb-6">
 
           <h2 className="text-2xl font-bold">
-            Book Free Consultation
+            Book Consultation
           </h2>
 
           <button
