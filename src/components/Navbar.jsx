@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Navbar({ onConsultation }) {
   return (
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/70 border-b border-gray-800">
@@ -28,9 +30,9 @@ export default function Navbar({ onConsultation }) {
             Services
           </a>
 
-          <a href="#about" className="hover:text-yellow-400 transition">
-            About
-          </a>
+          <Link href="/about" className="hover:text-yellow-400 transition">
+           About
+          </Link>
 
           <a href="#contact" className="hover:text-yellow-400 transition">
             Contact

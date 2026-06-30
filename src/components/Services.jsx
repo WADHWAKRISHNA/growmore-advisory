@@ -29,7 +29,10 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="px-8 md:px-10 py-24 border-t border-gray-800">
+    <section
+      id="services"
+      className="px-8 md:px-10 py-24 border-t border-gray-800"
+     >
 
       <div className="max-w-7xl mx-auto">
 

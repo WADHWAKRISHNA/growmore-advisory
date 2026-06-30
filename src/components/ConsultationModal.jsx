@@ -78,10 +78,10 @@ I want to book a free consultation.`;
           </select>
 
          <button
-          onClick={onConsultation}
-          className="px-5 py-2 bg-yellow-500 text-black rounded-full font-medium hover:scale-105 transition"
-         >
-          Book Consultation
+           type="submit"
+           className="w-full py-4 bg-yellow-500 text-black rounded-lg font-semibold hover:bg-yellow-400 transition"
+           >
+           Book Consultation
          </button>
 
         </form>
