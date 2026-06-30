@@ -58,49 +58,64 @@ export default function CTA() {
 
           </p>
 
-          {/* Buttons */}
+          {/* Contact Buttons */}
 
-          <div className="mt-14 flex flex-col justify-center gap-5 sm:flex-row">
+<div className="mt-14 flex flex-col items-center gap-5">
 
-            <Link href="/contact">
+  {/* WhatsApp */}
+  <Link
+    href="https://wa.me/917452878887?text=Hello%20Grow%20More%20Advisory,%20I%20would%20like%20to%20book%20a%20consultation."
+    target="_blank"
+  >
+    <motion.button
+      whileHover={{ scale: 1.05, y: -4 }}
+      whileTap={{ scale: 0.97 }}
+      className="rounded-full bg-green-500 px-10 py-4 font-semibold text-white shadow-[0_0_35px_rgba(34,197,94,0.35)] transition"
+    >
+      💬 Book Consultation on WhatsApp
+    </motion.button>
+  </Link>
 
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  y: -4,
-                }}
-                whileTap={{
-                  scale: .97,
-                }}
-                className="rounded-full bg-yellow-500 px-10 py-4 font-semibold text-black shadow-[0_0_35px_rgba(234,179,8,0.35)] transition"
-              >
+  {/* Email */}
+  <Link
+    href="mailto:contact@growmoreadvisory.com?subject=Consultation Request"
+  >
+    <motion.button
+      whileHover={{ scale: 1.05, y: -4 }}
+      whileTap={{ scale: 0.97 }}
+      className="rounded-full border border-yellow-500/30 bg-white/5 px-10 py-4 font-semibold text-white transition hover:border-yellow-500 hover:bg-yellow-500/10"
+    >
+      ✉️ Send us an Email
+    </motion.button>
+  </Link>
 
-                Book Consultation Now
+</div>
+{/* Contact Details */}
 
-              </motion.button>
+<div className="mt-10 text-center">
 
-            </Link>
+  <p className="text-gray-400">
+    📱 WhatsApp :
+    <a
+      href="https://wa.me/917452878887"
+      target="_blank"
+      className="ml-2 font-semibold text-yellow-400 hover:underline"
+    >
+      +91 74528 78887
+    </a>
+  </p>
 
-            <Link href="/services">
+  <p className="mt-3 text-gray-400">
+    ✉️ Email :
+    <a
+      href="mailto:contact@growmoreadvisory.com"
+      className="ml-2 font-semibold text-yellow-400 hover:underline"
+    >
+      contact@growmoreadvisory.com
+    </a>
+  </p>
 
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  y: -4,
-                }}
-                whileTap={{
-                  scale: .97,
-                }}
-                className="rounded-full border border-yellow-500/30 bg-white/5 px-10 py-4 font-semibold text-white transition hover:border-yellow-500 hover:bg-yellow-500/10"
-              >
-
-                Explore Our Services
-
-              </motion.button>
-
-            </Link>
-
-          </div>
+</div>
 
           {/* Bottom Stats */}
 

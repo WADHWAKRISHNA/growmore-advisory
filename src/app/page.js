@@ -1,25 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-import Services from "@/components/Services";
+import Hero from "@/components/Hero/Hero";
+import TrustBar from "@/components/TrustBar";
+import Stats from "@/components/Stats/Stats";
+import Services from "@/components/Services/Services";
 import About from "@/components/About";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import Leadership from "@/components/Leadership";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import { useState } from "react";
 import ConsultationModal from "@/components/ConsultationModal";
-
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0 }
-};
 
 export default function Home() {
 
@@ -27,50 +22,50 @@ export default function Home() {
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
+
+    return () => {
+      document.documentElement.style.scrollBehavior = "auto";
+    };
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const message = e.target.message.value;
-
-    const text = `New Inquiry:%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-
-    window.open(`https://wa.me/917452878887?text=${text}`, "_blank");
-  };
-
-  const services = [
-    "GST Registration & Filing",
-    "Income Tax Filing",
-    "ROC Compliance",
-    "Business Registration",
-    "Accounting & Bookkeeping",
-    "Startup Advisory",
-  ];
-
   return (
-    <main className="min-h-screen bg-[#0b0b0b] text-white">
+    <main className="min-h-screen overflow-x-hidden bg-[#050505] text-white">
 
-      <Navbar onConsultation={() => setOpenModal(true)} />
-      <Hero onConsultation={() => setOpenModal(true)} />
+      <Navbar />
+
+      <Hero
+        onConsultation={() => setOpenModal(true)}
+      />
+
+      <TrustBar />
+
       <Stats />
+
       <Services />
+
       <About />
+
       <WhyChooseUs />
+
+      <Leadership />
+
       <Testimonials />
+
       <FAQ />
+
       <Contact />
+
       <Footer />
-      
-      {/* WHATSAPP FLOAT */}
+
+      {/* Floating WhatsApp */}
+
       <a
-       href="https://wa.me/917452878887?text=Hi%20I%20want%20consultation"
-       target="_blank"
-       className="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg hover:scale-110 transition z-50"
-       >
-       WhatsApp Us
+        href="https://wa.me/917452878887?text=Hi%20I%20want%20consultation"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 font-semibold text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-green-600"
+      >
+        💬 WhatsApp
       </a>
 
       <ConsultationModal
