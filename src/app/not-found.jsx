@@ -65,51 +65,6 @@ export default function NotFound() {
         className="absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-yellow-500/10"
       />
 
-      {/* Eyes */}
-
-      <motion.div
-        animate={{
-          y: [0, -8, 0],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-        }}
-        className="absolute top-24 flex gap-8"
-      >
-
-        <div className="flex h-28 w-28 items-center justify-center rounded-full bg-white shadow-2xl">
-
-          <motion.div
-            animate={{
-              x: [-6, 6, -6],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-            }}
-            className="h-8 w-8 rounded-full bg-black"
-          />
-
-        </div>
-
-        <div className="flex h-28 w-28 items-center justify-center rounded-full bg-white shadow-2xl">
-
-          <motion.div
-            animate={{
-              x: [6, -6, 6],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-            }}
-            className="h-8 w-8 rounded-full bg-black"
-          />
-
-        </div>
-
-      </motion.div>
-
       <div className="relative z-10 mt-40 max-w-3xl text-center">
 
         <AnimatePresence mode="wait">
