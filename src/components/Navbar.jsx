@@ -28,6 +28,11 @@ export default function Navbar() {
       external: true,
     },
     {
+      name: "Tools",
+      href: "/tools",
+      external: false,
+    },
+    {
       name: "About",
       href: "/about",
       external: false,
@@ -161,6 +166,13 @@ export default function Navbar() {
                 >
                   Services
                 </a>
+                <Link
+  href="/tools"
+  onClick={() => setMenuOpen(false)}
+  className="rounded-xl border border-white/10 px-4 py-3 text-gray-300 transition hover:border-yellow-500 hover:bg-yellow-500/10 hover:text-yellow-400"
+>
+  Tools
+</Link>
 
                 <Link
                   href="/about"

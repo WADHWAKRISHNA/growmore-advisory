@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import LoaderWrapper from "@/components/LoaderWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -119,7 +120,9 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#050505] text-white">
-        {children}
+         <LoaderWrapper>
+          {children}
+         </LoaderWrapper>
       </body>
       
       <GoogleAnalytics gaId="G-2FSKL8WH11" />
