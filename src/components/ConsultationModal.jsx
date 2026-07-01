@@ -5,21 +5,30 @@ export default function ConsultationModal({ open, onClose }) {
   if (!open) return null;
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
 
     const name = e.target.name.value;
     const phone = e.target.phone.value;
+    const email = e.target.email.value;
     const service = e.target.service.value;
+    const message = e.target.message.value;
 
-    const text = `Hello Grow More Advisory
+    const text = `Hello Grow More Advisory 👋
 
 Name : ${name}
 
 Phone : ${phone}
 
+Email : ${email}
+
 Service : ${service}
 
-I want to book a consultation.`;
+Requirement :
+${message || "Not Provided"}
+
+I would like to book a consultation.
+Please contact me.`;
 
     window.open(
       `https://wa.me/917452878887?text=${encodeURIComponent(text)}`,
@@ -27,24 +36,46 @@ I want to book a consultation.`;
     );
 
     onClose();
+
   };
 
   return (
-    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[100]">
 
-      <div className="bg-[#111] border border-gray-700 rounded-2xl p-8 w-[95%] max-w-lg">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-md p-4"
+    >
 
-        <div className="flex justify-between items-center mb-6">
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="w-full max-w-lg rounded-3xl border border-yellow-500/20 bg-[#111111] p-8 shadow-2xl"
+      >
 
-          <h2 className="text-2xl font-bold">
-            Book Consultation
-          </h2>
+        <div className="mb-8 flex items-center justify-between">
+
+          <div>
+
+            <h2 className="text-3xl font-black text-white">
+
+              Book Consultation
+
+            </h2>
+
+            <p className="mt-2 text-gray-400">
+
+              Fill in your details and we'll connect with you shortly.
+
+            </p>
+
+          </div>
 
           <button
             onClick={onClose}
-            className="text-2xl"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-xl text-gray-400 transition hover:bg-red-500 hover:text-white"
           >
+
             ✕
+
           </button>
 
         </div>
@@ -53,41 +84,88 @@ I want to book a consultation.`;
           onSubmit={handleSubmit}
           className="space-y-5"
         >
-
-          <input
+                    <input
+            type="text"
             name="name"
-            placeholder="Your Name"
-            className="w-full p-4 rounded-lg bg-black border border-gray-700"
+            required
+            placeholder="Your Full Name"
+            className="w-full rounded-xl border border-gray-700 bg-black px-5 py-4 text-white outline-none transition-all duration-300 focus:border-yellow-500"
           />
 
           <input
+            type="tel"
             name="phone"
-            placeholder="Phone Number"
-            className="w-full p-4 rounded-lg bg-black border border-gray-700"
+            required
+            pattern="[0-9]{10}"
+            maxLength={10}
+            placeholder="10-digit Mobile Number"
+            className="w-full rounded-xl border border-gray-700 bg-black px-5 py-4 text-white outline-none transition-all duration-300 focus:border-yellow-500"
+          />
+
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Email Address"
+            className="w-full rounded-xl border border-gray-700 bg-black px-5 py-4 text-white outline-none transition-all duration-300 focus:border-yellow-500"
           />
 
           <select
             name="service"
-            className="w-full p-4 rounded-lg bg-black border border-gray-700"
+            required
+            className="w-full rounded-xl border border-gray-700 bg-black px-5 py-4 text-white outline-none transition-all duration-300 focus:border-yellow-500"
           >
-            <option>GST Filing</option>
+
+            <option value="">Select Service</option>
+
+            <option>GST Registration & Filing</option>
+
             <option>Income Tax</option>
+
             <option>ROC Compliance</option>
-            <option>Accounting</option>
+
+            <option>Accounting & Bookkeeping</option>
+
             <option>Startup Advisory</option>
+
+            <option>Business Registration</option>
+
+            <option>Financial Consulting</option>
+
+            <option>Auditing & Assurance</option>
+
+            <option>Others</option>
+
           </select>
 
-         <button
-           type="submit"
-           className="w-full py-4 bg-yellow-500 text-black rounded-lg font-semibold hover:bg-yellow-400 transition"
-           >
-           Book Consultation
-         </button>
+          <textarea
+            name="message"
+            rows={4}
+            placeholder="Tell us briefly about your requirement (Optional)"
+            className="w-full resize-none rounded-xl border border-gray-700 bg-black px-5 py-4 text-white outline-none transition-all duration-300 focus:border-yellow-500"
+          />
+                    <button
+            type="submit"
+            className="w-full rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 py-4 text-lg font-bold text-black transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(234,179,8,0.35)] active:scale-95"
+          >
+
+            Book Free Consultation
+
+          </button>
+
+          <p className="text-center text-sm leading-6 text-gray-500">
+
+            By submitting this form, you agree to be contacted by
+            Grow More Advisory via phone, email or WhatsApp regarding
+            your enquiry.
+
+          </p>
 
         </form>
 
       </div>
 
     </div>
+
   );
 }
